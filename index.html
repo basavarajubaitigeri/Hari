@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kannamma 💚 Kannayya</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* BODY */
+body {
+  margin: 0;
+  background: #001b12;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* MOON AND STARS BACKGROUND */
+#moon {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 30% 30%, #fef9e7, #f7dc6f);
+  border-radius: 50%;
+  box-shadow: 0 0 60px rgba(255, 255, 190, 0.5);
+  z-index: -1;
+  animation: moonGlow 4s infinite alternate;
+}
+
+@keyframes moonGlow {
+  0% { box-shadow: 0 0 40px rgba(255, 255, 190, 0.4); }
+  100% { box-shadow: 0 0 80px rgba(255, 255, 190, 0.7); }
+}
+
+.star {
+  position: fixed;
+  background: white;
+  border-radius: 50%;
+  z-index: -1;
+  animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* ROMANTIC STARS BACKGROUND */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url("https://i.imgur.com/8iR2k4s.png");
+  opacity: 0.2;
+  z-index: -2;
+}
+
+/* NAME */
+#name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+  color: #00ff9d;
+  margin-top: 20px;
+  text-shadow: 0 0 20px #00ff9d;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00ff9d; }
+  to { text-shadow: 0 0 30px #00ff9d; }
+}
+
+/* PROFILE PHOTO */
+.photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 6px solid #00ff9d;
+  object-fit: cover;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* TYPING ANIMATION CONTAINER */
+.typing-container {
+  position: relative;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 25px;
+}
+
+/* TYPING ANIMATION PARAGRAPH */
+.typing-text {
+  font-size: 20px;
+  line-height: 1.8;
+  text-align: left;
+  color: #eafff4;
+  font-family: 'Caveat', cursive;
+  min-height: 200px;
+  padding: 25px;
+  background: rgba(0, 255, 157, 0.05);
+  border-radius: 15px;
+  border-left: 4px solid #00ff9d;
+  white-space: pre-wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cursor for typing effect */
+.cursor {
+  display: inline-block;
+  width: 3px;
+  background-color: #00ff9d;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+  height: 1.2em;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* FLOATING HEARTS AROUND TEXT */
+.floating-heart {
+  position: absolute;
+  font-size: 20px;
+  color: #ff66a3;
+  z-index: 10;
+  opacity: 0.7;
+  animation: floatHeart 8s infinite linear;
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* GLASSMORPHISM LOVE CARD */
+.glassmorphism-card {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.glassmorphism-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,255,157,0.1) 0%, rgba(0,0,0,0) 70%);
+  z-index: -1;
+}
+
+.glassmorphism-card h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  color: #00ff9d;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px rgba(0,255,157,0.5);
+}
+
+.glassmorphism-card p {
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: 'Caveat', cursive;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(0,255,157,0.1);
+  padding: 15px;
+  border-radius: 15px;
+  border: 2px solid #00ff9d;
+  backdrop-filter: blur(5px);
+  font-size: 16px;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid #00ff9d;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+}
+.gallery img {
+  filter: brightness(1.05) contrast(1.1);
+}
+
+/* ABOUT KANNAMMA */
+.about-kannamma {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: rgba(0,255,157,0.08);
+  border: 2px solid #00ff9d;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  font-size: 18px;
+  line-height: 1.7;
+  color: #eafff4;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.about-kannamma h2 {
+  color: #00ff9d;
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+  text-shadow: 0 0 15px #00ff9d;
+}
+
+/* LOVE BUTTON */
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #00ff9d;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 15px;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,255,157,0.3);
+}
+
+/* HEARTBEAT */
+.heart {
+  font-size: 40px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+/* ROSE PETALS */
+.rose {
+  position: fixed;
+  top: -50px;
+  font-size: 20px;
+  animation: fall linear infinite;
+  color: #00ff9d;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+
+/* FIREWORKS */
+.firework {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background: #00ff9d;
+  border-radius: 50%;
+  animation: explode 1s forwards;
+}
+
+@keyframes explode {
+  to {
+    transform: scale(20);
+    opacity: 0;
+  }
+}
+
+/* VOICE CONTROL BUTTONS */
+.voice-controls {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.voice-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #00ff9d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+
+.voice-btn:hover {
+  background: rgba(0, 255, 157, 0.2);
+  transform: translateY(-2px);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  #name { font-size: 40px; }
+  .photo { width: 150px; height: 150px; }
+  .typing-text { font-size: 18px; padding: 15px; }
+  .glassmorphism-card { padding: 20px; margin: 20px; }
+  #moon { width: 60px; height: 60px; top: 20px; right: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MOON AND STARS -->
+<div id="moon"></div>
+
+<h1 id="name">💚 Kannamma 💚</h1>
+
+<!-- PROFILE PHOTO -->
+<img src="hari7.jpeg" class="photo">
+
+<div class="about-kannamma">
+  <h2>About My Kannamma 🌿</h2>
+  <p>
+    Kannamma is the most innocent and kind-hearted girl I have ever met.  
+    She has a beautiful smile that can light up my darkest days,  
+    a sweet voice that calms my heart, and a pure soul full of love and care.  
+    She loves animals, nature, and spreading happiness everywhere she goes.  
+    She is loyal, mature, understanding, and my biggest blessing in life.  
+    <br><br>
+    You are not just my love, Kannamma… you are my peace, my happiness, my forever 💚  
+    — Yours forever, Kannayya
+  </p>
+</div>
+
+<!-- TYPING ANIMATION SECTION -->
+<div class="typing-container">
+  <h2>🌸 A Message For My Kannamma</h2>
+  <div class="typing-text" id="animated-text"></div>
+  <div class="voice-controls">
+    <button class="voice-btn" onclick="readTextAloud()">
+      <i class="fas fa-play"></i> Read Aloud
+    </button>
+    <button class="voice-btn" onclick="pauseReading()">
+      <i class="fas fa-pause"></i> Pause
+    </button>
+    <button class="voice-btn" onclick="resumeReading()">
+      <i class="fas fa-redo"></i> Resume
+    </button>
+  </div>
+</div>
+
+<!-- GLASSMORPHISM LOVE CARD -->
+<div class="glassmorphism-card">
+  <h3>💖 My Promise</h3>
+  <p>
+    No matter where life takes us, I promise to always stand by you, 
+    support your dreams, cherish every moment with you, and love you 
+    more with each passing day. You are my forever and always.
+  </p>
+</div>
+
+<!-- HEART SYMBOL -->
+<p class="heart">💚</p>
+<p>My innocent, loyal, kind, beautiful Kannamma 🌿</p>
+
+<!-- QUALITIES CARDS -->
+<div class="cards">
+  <div class="card">🌿 Animal Lover</div>
+  <div class="card">💖 Innocent & Pure Heart</div>
+  <div class="card">🤍 Loyal & Trustworthy</div>
+  <div class="card">😊 Beautiful Smile</div>
+  <div class="card">🎶 Sweet Voice</div>
+  <div class="card">🧠 Mature & Understanding</div>
+  <div class="card">🌸 Kind Soul</div>
+  <div class="card">💚 My Forever Love</div>
+</div>
+
+<!-- PHOTO GALLERY -->
+<h2>Our Memories 💞</h2>
+<div class="gallery">
+  <img src="hari1.jpeg" style="object-position:50% 10%;">
+  <img src="hari2.jpeg" style="object-position:50% 20%;">
+  <img src="hari3.jpeg" style="object-position:50% 25%;">
+  <img src="hari5.jpeg" style="object-position:50% 15%;">
+</div>
+
+<!-- LOVE LETTER -->
+<h2>Love Letter 💌</h2>
+<p id="letter"></p>
+
+<button onclick="showLove()">💌 Surprise Message</button>
+<button onclick="proposal()">💍 Will you be my forever?</button>
+
+<!-- DAYS COUNTER -->
+<h3 id="days"></h3>
+
+<!-- MUSIC -->
+<audio id="music" autoplay loop>
+  <source src="PASTE_ROMANTIC_SONG_URL_MP3">
+</audio>
+
+<script>
+// Text for typing animation
+const loveMessage = `My dearest Kannamma,
+
+From the moment I met you, my life transformed 
+into something beautiful and meaningful. Your 
+smile brightens my darkest days, your voice 
+calms my restless soul, and your love completes 
+me in ways I never imagined possible.
+
+You are my greatest blessing, my forever love, 
+and my reason to be a better person every day. 
+I cherish every moment with you and look forward 
+to building countless more memories together.
+
+With all my love forever,
+Kannayya 💚`;
+
+// TYPING ANIMATION
+let charIndex = 0;
+const typingElement = document.getElementById('animated-text');
+let typingInterval;
+
+function startTyping() {
+  clearInterval(typingInterval);
+  charIndex = 0;
+  typingElement.innerHTML = '';
+  
+  typingInterval = setInterval(() => {
+    if (charIndex < loveMessage.length) {
+      typingElement.innerHTML = loveMessage.substring(0, charIndex + 1) + '<span class="cursor"></span>';
+      charIndex++;
+      
+      // Create floating hearts occasionally
+      if (charIndex % 20 === 0) {
+        createFloatingHeart();
+      }
+    } else {
+      clearInterval(typingInterval);
+      typingElement.innerHTML = loveMessage;
+    }
+  }, 50);
+}
+
+// FLOATING HEARTS
+function createFloatingHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'floating-heart';
+  heart.innerHTML = '💖';
+  heart.style.left = Math.random() * 100 + '%';
+  heart.style.fontSize = (15 + Math.random() * 15) + 'px';
+  heart.style.animationDuration = (5 + Math.random() * 10) + 's';
+  
+  document.querySelector('.typing-container').appendChild(heart);
+  
+  // Remove heart after animation
+  setTimeout(() => {
+    if (heart.parentNode) {
+      heart.parentNode.removeChild(heart);
+    }
+  }, 10000);
+}
+
+// Create initial floating hearts
+for (let i = 0; i < 5; i++) {
+  setTimeout(() => createFloatingHeart(), i * 500);
+}
+
+// MOON AND STARS
+const moon = document.getElementById('moon');
+for (let i = 0; i < 50; i++) {
+  const star = document.createElement('div');
+  star.className = 'star';
+  star.style.width = Math.random() * 4 + 2 + 'px';
+  star.style.height = star.style.width;
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top = Math.random() * 100 + '%';
+  star.style.animationDuration = (1 + Math.random() * 4) + 's';
+  star.style.animationDelay = Math.random() * 5 + 's';
+  document.body.appendChild(star);
+}
+
+// AI VOICE READING
+let speech = null;
+let isSpeaking = false;
+
+function readTextAloud() {
+  if ('speechSynthesis' in window) {
+    if (speech && isSpeaking) {
+      window.speechSynthesis.cancel();
+    }
+    
+    speech = new SpeechSynthesisUtterance(loveMessage);
+    speech.lang = 'en-US';
+    speech.rate = 0.9;
+    speech.pitch = 1.2;
+    speech.volume = 1;
+    
+    speech.onstart = () => {
+      isSpeaking = true;
+    };
+    
+    speech.onend = () => {
+      isSpeaking = false;
+    };
+    
+    window.speechSynthesis.speak(speech);
+  } else {
+    alert("Your browser doesn't support text-to-speech. Try Chrome or Edge.");
+  }
+}
+
+function pauseReading() {
+  if ('speechSynthesis' in window && isSpeaking) {
+    window.speechSynthesis.pause();
+  }
+}
+
+function resumeReading() {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.resume();
+  }
+}
+
+/* ORIGINAL FUNCTIONS */
+
+/* TYPING LOVE LETTER */
+let text = "My Kannamma, you are my happiness, my peace, my forever. I love you more than words can say 💚";
+let i = 0;
+function typeLetter() {
+  if (i < text.length) {
+    document.getElementById("letter").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeLetter, 50);
+  }
+}
+typeLetter();
+
+/* SURPRISE BUTTON */
+function showLove() {
+  alert("I Love You Kannammaaaaa 💚 - Kannayya");
+}
+
+/* PROPOSAL */
+function proposal() {
+  let ans = confirm("Kannamma, Will you be my forever? 💍");
+  if (ans) {
+    fireworks();
+    speakLove();
+  }
+}
+
+/* FIREWORKS */
+function fireworks() {
+  for (let i = 0; i < 20; i++) {
+    let f = document.createElement("div");
+    f.className = "firework";
+    f.style.left = Math.random() * 100 + "%";
+    f.style.top = Math.random() * 100 + "%";
+    document.body.appendChild(f);
+    setTimeout(() => f.remove(), 1000);
+  }
+}
+
+/* AI VOICE FOR PROPOSAL */
+function speakLove() {
+  let msg = new SpeechSynthesisUtterance("I Love You Kannamma");
+  msg.lang = "en-US";
+  speechSynthesis.speak(msg);
+}
+
+/* FALLING ROSES */
+for (let i = 0; i < 20; i++) {
+  let r = document.createElement("div");
+  r.className = "rose";
+  r.innerHTML = "🌹";
+  r.style.left = Math.random() * 100 + "%";
+  r.style.animationDuration = (5 + Math.random() * 5) + "s";
+  document.body.appendChild(r);
+}
+
+/* DAYS SINCE LOVE */
+let loveDate = new Date("2025-10-22"); // CHANGE THIS DATE
+setInterval(() => {
+  let now = new Date();
+  let diff = Math.floor((now - loveDate) / (1000 * 60 * 60 * 24));
+  document.getElementById("days").innerHTML = "💌 Days since I fell in love with Kannamma: " + diff;
+}, 1000);
+
+/* HEART EASTER EGG */
+let heartClicks = 0;
+document.querySelector(".heart").onclick = () => {
+  heartClicks++;
+  if (heartClicks == 5) {
+    alert("Secret Love Mode Activated 💚 Kannayya Forever!");
+    startTyping();
+  }
+};
+
+// Start typing animation when page loads
+window.onload = function() {
+  setTimeout(startTyping, 1000);
+  
+  // Add floating hearts around the typing container
+  const container = document.querySelector('.typing-container');
+  for (let i = 0; i < 8; i++) {
+    setTimeout(() => createFloatingHeart(), i * 300);
+  }
+};
+</script>
+</body>
+</html>
